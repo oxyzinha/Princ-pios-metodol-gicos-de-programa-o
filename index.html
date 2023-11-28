@@ -1,112 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site com Botão de Navegação</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sofia:wght@400&display=swap">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: purple; /* Cor de fundo para o restante da página */
+            background-color: #f0f0f0;
+            /* Cor de fundo para o restante da página */
+            transition: background-color 0.3s ease;
+            font-family: "Sofia", sans-serif; /* Adiciona a fonte Sofia à tag body */
+        }
+
+        body.dark-mode {
+            background-color: #333;
+            /* Cor de fundo para modo escuro */
+            color: #fff;
+            /* Cor do texto para modo escuro */
         }
 
         .header {
-            position: relative; /* Adiciona posição relativa para que o título possa ser posicionado de forma absoluta dentro deste contêiner */
-            background-image: url('https://wallpaperboat.com/wp-content/uploads/2020/12/06/63064/pink-and-purple-13.jpg');
-            background-size: cover; /* Para cobrir todo o fundo */
-            background-position: center; /* Centralizar a imagem */
-            background-repeat: no-repeat; /* Evitar repetição */
-            height: 400px; /* Altura do retângulo da imagem */
+            position: relative;
+            height: 500px;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            margin: 70px; /* Adicionando margem */
-            border-radius: 40px; /* Borda arredondada */
+            margin: 70px;
+            border-radius: 40px;
+            transition: background-image 0.3s ease;
+            background-image: url('pinky.webp'); /* Imagem de fundo padrão */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .header.dark-mode {
+            background-image: url('pink-sky-08.jpg'); /* Imagem de fundo para modo escuro */
+        }
+
+        .header.dark-mode img.dark-mode-image { 
+            opacity: 1;  /* Torna a imagem visível no modo escuro */
         }
 
         .header h1 {
-            color: #fff; /* Cor do texto */
-            text-align: center; /* Alinhamento centralizado */
-            margin-top: -300px; /* Ajuste a margem superior conforme necessário */
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+            /* Ajuste para posicionar um pouco mais abaixo */
         }
 
         .header nav {
-            position: absolute; /* Posiciona a navegação de forma absoluta dentro do .header */
-            bottom: 50%; /* Ajuste para centralizar verticalmente os botões */
-            transform: translateY(50%); /* Ajuste para centralizar verticalmente os botões */
-            display: flex; /* Usar flexbox para alinhar itens */
-            justify-content: center; /* Centraliza os itens */
-            width: 100%; /* Garante que a largura seja 100% do .header */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            /* Espaço entre o texto e os botões */
         }
 
-        .header nav a {
+        .header nav button {
             color: white;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 10px;
+            /* Espaçamento entre os botões */
             cursor: pointer;
-            padding: 15px 30px; /* Ajuste o tamanho dos botões aqui */
-            background-color: #333;
+            padding: 15px 30px;
+            background-color: #ff69b4;
+            border: none;
             border-radius: 5px;
+            font-size: 16px;
             transition: background-color 0.3s ease;
         }
 
-        .header nav a:hover {
-            background-color: #555; /* Cor de fundo ao passar o mouse */
+        .header nav button img {
+            margin-right: 10px;
+            /* Espaçamento entre o texto e a imagem */
+            width: 30px;
+            /* Largura da imagem ajustada conforme necessário */
+            height: 30px;
+            /* Altura da imagem ajustada conforme necessário */
+        }
+
+        .header nav button:hover {
+            background-color: #d45099;
+            /* Cor rosa mais escura ao passar o mouse */
+        }
+
+        .dark-mode-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .dark-mode-btn:hover {
+            opacity: 0.8;
         }
 
         section {
-            height: 500px; /* Ajuste conforme necessário */
+            height: 500px;
             padding: 20px;
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo com opacidade para melhorar a legibilidade */
-            margin: 20px; /* Espaçamento entre as seções */
-            border-radius: 10px; /* Borda arredondada */
-            color: #333; /* Cor do texto para melhor contraste */
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 20px;
+            border-radius: 15px;
+            color: #333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button-image {
+            width: 100px;
+            /* Largura da imagem ajustada conforme necessário */
+            height: 100px;
+            /* Altura da imagem ajustada conforme necessário */
+            margin-right: 20px;
+        }
+
+        .text-content {
+            text-align: left;
         }
     </style>
 </head>
+
 <body>
 
     <div class="header">
-        <!-- Título dentro da imagem -->
-        <h1>Princípios metodológicos de programação</h1>
-        <!-- Navegação dentro do retângulo -->
+        <h1>Princípios Metodológicos de Programação</h1>
         <nav>
-            <a onclick="scrollToSection('secao1')">Seção 1</a>
-            <a onclick="scrollToSection('secao2')">Seção 2</a>
-            <a onclick="scrollToSection('secao3')">Seção 3</a>
+            <button onclick="scrollToSection('secao1')">Seção 1</button>
+            <button onclick="scrollToSection('secao2')">Seção 2</button>
+            <button onclick="scrollToSection('secao3')">Seção 3</button>
         </nav>
+        <div class="header-content">    
+            <div class="text-content">
+                <h2>Lara Manon</h2>
+                <p>Algumas Referências</p>
+            </div>
+            <img src="pink.jpg" alt="Imagem 1" class="button-image dark-mode-image">
+        </div>
     </div>
 
     <!-- Seção 1 -->
     <section id="secao1">
-        <h2>Seção 1</h2>
-        <p>Conteúdo da Seção 1...</p>
+        <h2>Metodologias em Programação Local</h2>
+        <p>Nesta seção, exploramos a importância de escolher metodologias adequadas para desenvolver programas em ambientes locais. Abordamos métodos e práticas eficazes, apresentamos exemplos práticos, discutimos a adaptação às necessidades locais e destacamos as tendências atuais. Ao final, você terá uma compreensão sólida para escolher a abordagem certa em seus projetos.</p>
     </section>
 
     <!-- Seção 2 -->
     <section id="secao2">
-        <h2>Seção 2</h2>
-        <p>Conteúdo da Seção 2...</p>
+        <h2>Evolução, Vantagens e Desvantagens das Metodologias de Programação</h2>
+        <p>Nesta seção, mergulharemos na fascinante jornada da evolução das metodologias de programação ao longo do tempo. Vamos explorar como essas abordagens se desenvolveram, desde os primórdios da programação até as metodologias mais modernas. Ao compreender essa evolução, poderemos analisar as vantagens e desvantagens das metodologias em diversos contextos. Discutiremos como cada metodologia aborda os desafios específicos da programação e como escolher a melhor estratégia para otimizar o desenvolvimento de software.</p>
     </section>
 
     <!-- Seção 3 -->
     <section id="secao3">
-        <h2>Seção 3</h2>
-        <p>Conteúdo da Seção 3...</p>
+        <h2>Explorando a Criação de Programas Interativos</h2>
+        <p>Nesta etapa, exploraremos as abordagens para a criação de programas interativos e dinâmicos. Abordaremos conceitos fundamentais, ferramentas populares e melhores práticas para desenvolver interfaces de usuário envolventes e funcionais. Ao final desta seção, você terá insights valiosos sobre como criar programas interativos que proporcionam uma experiência de usuário excepcional.</p>
     </section>
+
+    <img src="light_bulb.png" alt="Dark Mode" class="dark-mode-btn" onclick="toggleDarkMode()">
 
     <script>
         function scrollToSection(sectionId) {
             var section = document.getElementById(sectionId);
-            if (section) {
-                section.scrollIntoView({ behavior: 'smooth' });
-            }
+            section.scrollIntoView({ behavior: "smooth" });
         }
-    </script>
 
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+            var header = document.querySelector('.header');
+            header.classList.toggle('dark-mode');
+        }
+        
+    </script>
 </body>
+
 </html>
