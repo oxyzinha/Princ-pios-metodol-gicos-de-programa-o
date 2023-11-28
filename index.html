@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site com Botão de Navegação</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: purple; /* Cor de fundo para o restante da página */
+        }
+
+        .header {
+            position: relative; /* Adiciona posição relativa para que o título possa ser posicionado de forma absoluta dentro deste contêiner */
+            background-image: url('https://wallpaperboat.com/wp-content/uploads/2020/12/06/63064/pink-and-purple-13.jpg');
+            background-size: cover; /* Para cobrir todo o fundo */
+            background-position: center; /* Centralizar a imagem */
+            background-repeat: no-repeat; /* Evitar repetição */
+            height: 400px; /* Altura do retângulo da imagem */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 70px; /* Adicionando margem */
+            border-radius: 40px; /* Borda arredondada */
+        }
+
+        .header h1 {
+            color: #fff; /* Cor do texto */
+            text-align: center; /* Alinhamento centralizado */
+            margin-top: -300px; /* Ajuste a margem superior conforme necessário */
+        }
+
+        .header nav {
+            position: absolute; /* Posiciona a navegação de forma absoluta dentro do .header */
+            bottom: 50%; /* Ajuste para centralizar verticalmente os botões */
+            transform: translateY(50%); /* Ajuste para centralizar verticalmente os botões */
+            display: flex; /* Usar flexbox para alinhar itens */
+            justify-content: center; /* Centraliza os itens */
+            width: 100%; /* Garante que a largura seja 100% do .header */
+        }
+
+        .header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            cursor: pointer;
+            padding: 15px 30px; /* Ajuste o tamanho dos botões aqui */
+            background-color: #333;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .header nav a:hover {
+            background-color: #555; /* Cor de fundo ao passar o mouse */
+        }
+
+        section {
+            height: 500px; /* Ajuste conforme necessário */
+            padding: 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo com opacidade para melhorar a legibilidade */
+            margin: 20px; /* Espaçamento entre as seções */
+            border-radius: 10px; /* Borda arredondada */
+            color: #333; /* Cor do texto para melhor contraste */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <!-- Título dentro da imagem -->
+        <h1>Princípios metodológicos de programação</h1>
+        <!-- Navegação dentro do retângulo -->
+        <nav>
+            <a onclick="scrollToSection('secao1')">Seção 1</a>
+            <a onclick="scrollToSection('secao2')">Seção 2</a>
+            <a onclick="scrollToSection('secao3')">Seção 3</a>
+        </nav>
+    </div>
+
+    <!-- Seção 1 -->
+    <section id="secao1">
+        <h2>Seção 1</h2>
+        <p>Conteúdo da Seção 1...</p>
+    </section>
+
+    <!-- Seção 2 -->
+    <section id="secao2">
+        <h2>Seção 2</h2>
+        <p>Conteúdo da Seção 2...</p>
+    </section>
+
+    <!-- Seção 3 -->
+    <section id="secao3">
+        <h2>Seção 3</h2>
+        <p>Conteúdo da Seção 3...</p>
+    </section>
+
+    <script>
+        function scrollToSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+
+</body>
+</html>
