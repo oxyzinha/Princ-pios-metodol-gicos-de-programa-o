@@ -1,202 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
+        <!DOCTYPE html>
+        <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site com Botão de Navegação</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sofia:wght@400&display=swap">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #f0f0f0;
-            /* Cor de fundo para o restante da página */
-            transition: background-color 0.3s ease;
-            font-family: "Sofia", sans-serif; /* Adiciona a fonte Sofia à tag body */
-        }
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Site com Botão de Navegação</title>
+            <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sofia:wght@400&display=swap">
+            <script src="script.js"></script>
+        </head>
 
-        body.dark-mode {
-            background-color: #333;
-            /* Cor de fundo para modo escuro */
-            color: #fff;
-            /* Cor do texto para modo escuro */
-        }
+        <body>
 
-        .header {
-            position: relative;
-            height: 500px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 70px;
-            border-radius: 40px;
-            transition: background-image 0.3s ease;
-            background-image: url('pinky.webp'); /* Imagem de fundo padrão */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
+            <div class="header">
+                <h1>Princípios Metodológicos de Programação</h1>
+                <nav>
+                    <button onclick="scrollToSection('secao1')">Seção 1</button>
+                    <button onclick="scrollToSection('secao2')">Seção 2</button>
+                    <button onclick="scrollToSection('secao3')">Seção 3</button>
+                </nav>
+                <div class="header-content">    
+                    <div class="text-content">
+                        <h2>Lara Manon  </h2>
+                        <p><a href="https://catalogo.anqep.gov.pt/ufcdDetalhe/788">Catálogo Nacional</a> <br>
+                           <a href="https://chat.openai.com/c/d34e619b-25b5-416e-8b03-dfd9e073e32e">Chat GPT</a>
 
-        .header.dark-mode {
-            background-image: url('pink-sky-08.jpg'); /* Imagem de fundo para modo escuro */
-        }
-
-        .header.dark-mode img.dark-mode-image { 
-            opacity: 1;  /* Torna a imagem visível no modo escuro */
-        }
-
-        .header h1 {
-            color: #fff;
-            text-align: center;
-            margin-top: 20px;
-            /* Ajuste para posicionar um pouco mais abaixo */
-        }
-
-        .header nav {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-top: 20px;
-            /* Espaço entre o texto e os botões */
-        }
-
-        .header nav button {
-            color: white;
-            text-decoration: none;
-            margin: 10px;
-            /* Espaçamento entre os botões */
-            cursor: pointer;
-            padding: 15px 30px;
-            background-color: #ff69b4;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-        }
-
-        .header nav button img {
-            margin-right: 10px;
-            /* Espaçamento entre o texto e a imagem */
-            width: 30px;
-            /* Largura da imagem ajustada conforme necessário */
-            height: 30px;
-            /* Altura da imagem ajustada conforme necessário */
-        }
-
-        .header nav button:hover {
-            background-color: #d45099;
-            /* Cor rosa mais escura ao passar o mouse */
-        }
-
-        .dark-mode-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            cursor: pointer;
-            transition: opacity 0.3s ease;
-        }
-
-        .dark-mode-btn:hover {
-            opacity: 0.8;
-        }
-
-        section {
-            height: 500px;
-            padding: 20px;
-            text-align: center;
-            background-color: rgba(255, 255, 255, 0.9);
-            margin: 20px;
-            border-radius: 15px;
-            color: #333;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        p {
-            color: #555;
-        }
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .button-image {
-            width: 100px;
-            /* Largura da imagem ajustada conforme necessário */
-            height: 100px;
-            /* Altura da imagem ajustada conforme necessário */
-            margin-right: 20px;
-        }
-
-        .text-content {
-            text-align: left;
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="header">
-        <h1>Princípios Metodológicos de Programação</h1>
-        <nav>
-            <button onclick="scrollToSection('secao1')">Seção 1</button>
-            <button onclick="scrollToSection('secao2')">Seção 2</button>
-            <button onclick="scrollToSection('secao3')">Seção 3</button>
-        </nav>
-        <div class="header-content">    
-            <div class="text-content">
-                <h2>Lara Manon</h2>
-                <p>Algumas Referências</p>
+                        </p>
+                    </div>
+                    <img src="icon.jpg  " alt="Imagem 1" class="button-image dark-mode-image">
+                </div>
             </div>
-            <img src="pink.jpg" alt="Imagem 1" class="button-image dark-mode-image">
-        </div>
-    </div>
 
-    <!-- Seção 1 -->
-    <section id="secao1">
-        <h2>Metodologias em Programação Local</h2>
-        <p>Nesta seção, exploramos a importância de escolher metodologias adequadas para desenvolver programas em ambientes locais. Abordamos métodos e práticas eficazes, apresentamos exemplos práticos, discutimos a adaptação às necessidades locais e destacamos as tendências atuais. Ao final, você terá uma compreensão sólida para escolher a abordagem certa em seus projetos.</p>
-    </section>
+            <!-- Seção 1 -->
+            <section id="secao1">
+                <h2>Metodologias em Programação Local</h2>
+                <p>Nesta seção, aprofundamos a relevância de selecionar metodologias apropriadas para o desenvolvimento de programas em ambientes locais. Abordamos métodos e práticas eficazes, fornecemos exemplos práticos e discutimos a adaptação às demandas específicas de cada local. Além disso, destacamos as tendências atuais nesse cenário. Ao concluir esta seção, você terá uma compreensão sólida para tomar decisões informadas ao escolher a abordagem certa para seus projetos locais.</p> <br>
+                <img src="image.png" alt="Descrição da Imagem" height="120px">
+            </section>
 
-    <!-- Seção 2 -->
-    <section id="secao2">
-        <h2>Evolução, Vantagens e Desvantagens das Metodologias de Programação</h2>
-        <p>Nesta seção, mergulharemos na fascinante jornada da evolução das metodologias de programação ao longo do tempo. Vamos explorar como essas abordagens se desenvolveram, desde os primórdios da programação até as metodologias mais modernas. Ao compreender essa evolução, poderemos analisar as vantagens e desvantagens das metodologias em diversos contextos. Discutiremos como cada metodologia aborda os desafios específicos da programação e como escolher a melhor estratégia para otimizar o desenvolvimento de software.</p>
-    </section>
+            <!-- Seção 2 -->
+            <section id="secao2">
+                <h2>Evolução, Vantagens e Desvantagens das Metodologias de Programação</h2>
+                <p>Nesta seção, mergulharemos na fascinante jornada da evolução das metodologias de programação ao longo do tempo. Vamos explorar como essas abordagens se desenvolveram, desde os primórdios da programação até as metodologias mais modernas. Ao compreender essa evolução, poderemos analisar as vantagens e desvantagens das metodologias em diversos contextos. Discutiremos como cada metodologia aborda os desafios específicos da programação e como escolher a melhor estratégia para otimizar o desenvolvimento de software.</p>
+                <img src="code.png" alt="Descrição da Imagem">
+            </section>
 
-    <!-- Seção 3 -->
-    <section id="secao3">
-        <h2>Explorando a Criação de Programas Interativos</h2>
-        <p>Nesta etapa, exploraremos as abordagens para a criação de programas interativos e dinâmicos. Abordaremos conceitos fundamentais, ferramentas populares e melhores práticas para desenvolver interfaces de usuário envolventes e funcionais. Ao final desta seção, você terá insights valiosos sobre como criar programas interativos que proporcionam uma experiência de usuário excepcional.</p>
-    </section>
+            <!-- Seção 3 -->
+            <section id="secao3">
+                <h2>Explorando a Criação de Programas Interativos</h2>
+                <p>Nesta fase, aprofundaremos as abordagens para a criação de programas interativos e dinâmicos, explorando conceitos fundamentais, ferramentas populares e melhores práticas. Abordaremos estratégias essenciais para desenvolver interfaces de usuário envolventes e funcionais. Ao concluir esta seção, você obterá insights valiosos sobre como criar programas interativos que proporcionam uma experiência de usuário excepcional, mesmo quando o espaço é limitado.</p>
+                <img src="code 2.png" alt="Descrição da Imagem" height=340">
+            </section>
 
-    <img src="light_bulb.png" alt="Dark Mode" class="dark-mode-btn" onclick="toggleDarkMode()">
+            <img src="light bulb.png" alt="Dark Mode" class="dark-mode-btn" onclick="toggleDarkMode()" height="50px">
 
-    <script>
-        function scrollToSection(sectionId) {
-            var section = document.getElementById(sectionId);
-            section.scrollIntoView({ behavior: "smooth" });
-        }
+          
 
-        function toggleDarkMode() {
-            document.body.classList.toggle("dark-mode");
-            var header = document.querySelector('.header');
-            header.classList.toggle('dark-mode');
-        }
-        
-    </script>
-</body>
+        </body>
 
-</html>
+        </html>

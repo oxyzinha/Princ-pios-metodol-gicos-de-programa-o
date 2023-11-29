@@ -1,0 +1,126 @@
+body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f0f0f0;
+            transition: background 0.3s ease;
+            font-family: "Sofia", sans-serif;
+        }
+
+        body.dark-mode {
+            background: url('f41433e90841a34b9caf9ee6096fe34a.gif') no-repeat center center fixed;
+            background-size: cover; /* Garante que o GIF cubra todo o background */
+            color: #fff;
+        }
+        
+        .header {
+            position: relative;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 70px;
+            border-radius: 40px;
+            transition: background-image 0.3s ease;
+            background-image: url('sky.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .header.dark-mode {
+            background-image: url('pink-sky-08.jpg');
+        }
+
+        .header.dark-mode img.dark-mode-image {
+            opacity: 1;
+        }
+
+        .header h1 {
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .header nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .header nav button {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            cursor: pointer;
+            padding: 15px 30px;
+            background-color: #000000;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .header nav button img {
+            margin-right: 10px;
+            width: 30px;
+            height: 30px;
+        }
+
+        .header nav button:hover {
+            background-color: #464242;
+        }
+
+        .dark-mode-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .dark-mode-btn:hover {
+            opacity: 0.8;
+        }
+
+        section {
+            height: 500px;
+            padding: 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            margin: 20px;
+            border-radius: 15px;
+            color: #333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #000000;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 60px;
+        }
+
+        .button-image {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+        }
+
+        .text-content {
+            text-align: left;
+        }
